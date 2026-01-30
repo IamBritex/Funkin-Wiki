@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es" data-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wiki | FNF V-Slice</title>
+    <link rel="icon" type="image/webp" href="icon.webp">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Montserrat:wght@600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <canvas id="particle-canvas"></canvas>
+
+    <nav class="navbar">
+        <div class="nav-brand">
+            <img src="https://github.com/FunkinCrew/Funkin/blob/main/docs/readme_images/FNF_logo.png?raw=true" alt="FNF Logo" class="brand-logo">
+            <div class="brand-info">
+                <span class="brand-name">FNF V-Slice</span>
+                <span class="brand-tag">DOCS</span>
+            </div>
+        </div>
+        
+        <div class="nav-controls">
+            
+            <div class="lang-selector">
+                <i class="fas fa-globe"></i>
+                <select id="langSelect">
+                    <option value="es">Español</option>
+                    <option value="en">English</option>
+                    <option value="pt">Português</option>
+                </select>
+            </div>
+
+            <div class="theme-toggles">
+                <button class="theme-btn" data-set-theme="dark" title="Dark Mode">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="theme-btn" data-set-theme="light" title="Light Mode">
+                    <i class="fas fa-sun"></i>
+                </button>
+                <button class="theme-btn" data-set-theme="funkin" title="Funkin Mode">
+                    <i class="fas fa-music"></i>
+                </button>
+            </div>
+
+            <div class="separator"></div>
+
+            <a href="https://github.com/IamBritex" target="_blank" class="nav-icon" title="GitHub">
+                <i class="fab fa-github"></i>
+            </a>
+        </div>
+    </nav>
+
+    <main class="container">
+        
+        <header class="hero">
+            <div class="hero-badge" data-i18n="hero-badge">No Oficial</div>
+            <h1 class="hero-title" data-i18n="hero-title">Documentación V-Slice</h1>
+            <p class="hero-subtitle" data-i18n="hero-subtitle">
+                Guía de referencia comunitaria para entender la estructura y modding de Friday Night Funkin' (V-Slice).
+            </p>
+            
+            <div class="search-box">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="searchInput" class="search-input" data-i18n-placeholder="search-placeholder" placeholder="Buscar archivo o carpeta...">
+                <div class="kbd-shortcut">Ctrl K</div>
+            </div>
+        </header>
+
+        <section class="grid-container" id="cardsGrid">
+            
+            <a href="#" class="card vibrate-btn searchable">
+                <div class="card-icon-bg">
+                    <i class="fas fa-folder-tree"></i>
+                </div>
+                <div class="card-content">
+                    <h3 data-i18n="card-1-title">Estructura de Archivos</h3>
+                    <p data-i18n="card-1-desc">Aprende dónde colocar tus canciones, imágenes y data. Entiende la jerarquía <code>assets/</code> y <code>mods/</code>.</p>
+                </div>
+                <div class="card-arrow">
+                    <i class="fas fa-arrow-right"></i>
+                </div>
+            </a>
+
+            <div class="card disabled searchable">
+                <div class="card-icon-bg">
+                    <i class="fas fa-code"></i>
+                </div>
+                <div class="card-content">
+                    <h3 data-i18n="card-2-title">Scripting (HScript)</h3>
+                    <p data-i18n="card-2-desc">Próximamente: Guía de eventos y scripts en Haxe para niveles personalizados.</p>
+                </div>
+                <div class="lock-icon"><i class="fas fa-lock"></i></div>
+            </div>
+
+            <div class="card disabled searchable">
+                <div class="card-icon-bg">
+                    <i class="fas fa-paint-brush"></i>
+                </div>
+                <div class="card-content">
+                    <h3 data-i18n="card-3-title">Arte y Sprites</h3>
+                    <p data-i18n="card-3-desc">Próximamente: Cómo optimizar hojas de sprites XML y animaciones.</p>
+                </div>
+                <div class="lock-icon"><i class="fas fa-lock"></i></div>
+            </div>
+
+            <div class="card disabled searchable">
+                <div class="card-icon-bg">
+                    <i class="fas fa-music"></i>
+                </div>
+                <div class="card-content">
+                    <h3 data-i18n="card-4-title">Audio y Charts</h3>
+                    <p data-i18n="card-4-desc">Próximamente: Formatos de audio soportados y JSONs de chart.</p>
+                </div>
+                <div class="lock-icon"><i class="fas fa-lock"></i></div>
+            </div>
+
+            <div class="card disabled searchable">
+                <div class="card-icon-bg">
+                    <i class="fas fa-microchip"></i>
+                </div>
+                <div class="card-content">
+                    <h3 data-i18n="card-5-title">Compilación</h3>
+                    <p data-i18n="card-5-desc">Próximamente: Guía para compilar el código fuente del juego.</p>
+                </div>
+                <div class="lock-icon"><i class="fas fa-lock"></i></div>
+            </div>
+
+            <div class="card disabled searchable">
+                <div class="card-icon-bg">
+                    <i class="fas fa-users"></i>
+                </div>
+                <div class="card-content">
+                    <h3 data-i18n="card-6-title">Recursos</h3>
+                    <p data-i18n="card-6-desc">Próximamente: Herramientas de la comunidad y enlaces útiles.</p>
+                </div>
+                <div class="lock-icon"><i class="fas fa-lock"></i></div>
+            </div>
+
+            <div id="noResults" class="no-results hidden">
+                <i class="fas fa-ghost"></i>
+                <p><span data-i18n="no-results">No se encontraron resultados para</span> "<span id="queryText"></span>"</p>
+            </div>
+
+        </section>
+
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
